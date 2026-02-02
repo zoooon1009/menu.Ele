@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleanor spa&treatment - カウンセリング</title>
+    <meta name="description" content="Eleanor spa&treatmentのカウンセリングシステム">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1 class="logo">Eleanor <span>spa&treatment</span></h1>
+            <div class="progress-bar">
+                <div class="progress-step" data-step="1">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">4</div>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- Step 1: メニュー選択 -->
+            <section class="step step-1 active" id="step1">
+                <h2 class="step-title">メニューの選択</h2>
+                <p class="step-description">ご希望のメニューをお選びください（複数選択可）</p>
+
+                <!-- 指名料選択（小さく） -->
+                <div class="nomination-inline">
+                    <span class="nomination-label">指名料：</span>
+                    <label class="nomination-radio">
+                        <input type="radio" name="nomination" value="true">
+                        <span>あり（+¥550）</span>
+                    </label>
+                    <label class="nomination-radio">
+                        <input type="radio" name="nomination" value="false" checked>
+                        <span>なし</span>
+                    </label>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-card" data-menu="cut" data-price="4500">
+                        <div class="menu-card-inner">
+                            <h3 class="menu-name">カット</h3>
+                            <p class="menu-price">¥4,500</p>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-menu="color" data-price="4500" data-price-range="true">
+                        <div class="menu-card-inner">
+                            <h3 class="menu-name">カラー</h3>
+                            <p class="menu-price">¥4,500</p>
+                            <div class="price-slider-container" style="display: none;">
+                                <input type="range" class="price-slider" data-target="color" min="4000" max="9000"
+                                    step="500" value="4500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-menu="bleach" data-price="8000" data-price-range="true">
+                        <div class="menu-card-inner">
+                            <h3 class="menu-name">ブリーチ</h3>
+                            <p class="menu-price">¥8,000</p>
+                            <div class="price-slider-container" style="display: none;">
+                                <input type="range" class="price-slider" data-target="bleach" min="4000" max="9000"
+                                    step="1000" value="8000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-menu="straightening" data-price="11000" data-price-range="true">
+                        <div class="menu-card-inner">
+                            <h3 class="menu-name">縮毛矯正</h3>
+                            <p class="menu-price">¥11,000</p>
+                            <div class="price-slider-container" style="display: none;">
+                                <input type="range" class="price-slider" data-target="straightening" min="5000"
+                                    max="11000" step="1000" value="11000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-menu="perm" data-price="6000" data-price-range="true">
+                        <div class="menu-card-inner">
+                            <h3 class="menu-name">パーマ</h3>
+                            <p class="menu-price">¥6,000</p>
+                            <div class="price-slider-container" style="display: none;">
+                                <input type="range" class="price-slider" data-target="perm" min="3000" max="8000"
+                                    step="500" value="6000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-menu="creamspa" data-price="4000">
+                        <div class="menu-card-inner">
+                            <h3 class="menu-name">クリームヘッドスパ</h3>
+                            <p class="menu-price">¥4,000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 追加オプション -->
+                <div class="additional-options">
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="eyebrowCutCheckbox" data-menu="eyebrow" data-price="1100">
+                        <span class="option-checkmark"></span>
+                        <span class="option-text">眉カット</span>
+                        <span class="option-price">+¥1,100</span>
+                    </label>
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="bangsCutCheckbox" data-menu="bangs" data-price="1100">
+                        <span class="option-checkmark"></span>
+                        <span class="option-text">前髪カット</span>
+                        <span class="option-price">+¥1,100</span>
+                    </label>
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="spaCheckbox" data-menu="spa" data-price="1500">
+                        <span class="option-checkmark"></span>
+                        <span class="option-text">スパシャンプー&ブロー</span>
+                        <span class="option-price">+¥1,500</span>
+                    </label>
+                </div>
+
+                <div class="step-nav">
+                    <button class="nav-btn next-btn" onclick="nextStep()" disabled>次へ</button>
+                </div>
+            </section>
+
+            <!-- クリームヘッドスパ詳細モーダル -->
+            <section class="step step-creamspa" id="stepCreamSpa">
+                <h2 class="step-title">クリームヘッドスパ</h2>
+                <p class="step-description">頭皮と心をリラックスさせる極上のスパ体験</p>
+                <div class="detail-image-container">
+                    <img src="images/spa.JPG" alt="クリームヘッドスパの効果" class="detail-image">
+                </div>
+                <div class="step-nav">
+                    <button class="nav-btn prev-btn" onclick="closeCreamSpaDetail()">戻る</button>
+                    <button class="nav-btn next-btn" onclick="confirmCreamSpa()">次へ</button>
+                </div>
+            </section>
+
+            <!-- 縮毛矯正詳細モーダル -->
+            <section class="step step-straightening" id="stepStraightening">
+                <h2 class="step-title">縮毛矯正</h2>
+                <p class="step-description">Eleanor船橋の特別な縮毛矯正プロセス</p>
+                <div class="detail-image-container">
+                    <img src="images/koutei.png" alt="縮毛矯正工程説明" class="detail-image">
+                </div>
+                <div class="step-nav">
+                    <button class="nav-btn prev-btn" onclick="closeStraighteningDetail()">戻る</button>
+                    <button class="nav-btn next-btn" onclick="confirmStraightening()">次へ</button>
+                </div>
+            </section>
+
+            <!-- Step 2: コース選択 -->
+            <section class="step step-2" id="step2">
+                <h2 class="step-title">コースの選択</h2>
+                <p class="step-description">ご希望のコースをお選びください</p>
+                <div class="course-grid">
+                    <div class="course-card" data-course="light" data-price="2000">
+                        <div class="course-header">
+                            <h3 class="course-name">ライトコース</h3>
+                            <p class="course-price">¥2,000</p>
+                        </div>
+                        <ul class="course-features">
+                            <li>髪質に合わせたトリートメント</li>
+                            <li>カラー剤の制限あり</li>
+                        </ul>
+                    </div>
+                    <div class="course-card" data-course="basic" data-price="4000">
+                        <div class="course-header">
+                            <h3 class="course-name">ベーシックコース</h3>
+                            <p class="course-price">¥4,000</p>
+                        </div>
+                        <ul class="course-features">
+                            <li>髪質改善トリートメント</li>
+                            <li>カラー剤の制限無し</li>
+                            <li>全カラー髪質改善カラー</li>
+                        </ul>
+                    </div>
+                    <div class="course-card" data-course="premium" data-price="7000">
+                        <div class="course-header">
+                            <h3 class="course-name">プレミアムコース</h3>
+                            <p class="course-price">¥7,000</p>
+                        </div>
+                        <ul class="course-features">
+                            <li>アルカリ酸熱or酸熱トリートメント</li>
+                            <li>カラー剤の制限無し</li>
+                            <li>全カラー髪質改善カラー</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-nav">
+                    <button class="nav-btn prev-btn" onclick="prevStep()">戻る</button>
+                    <button class="nav-btn next-btn" onclick="nextStep()">次へ</button>
+                </div>
+            </section>
+
+            <!-- プレミアムトリートメント選択（縮毛矯正以外） -->
+            <section class="step step-treatment" id="stepTreatment">
+                <h2 class="step-title">トリートメントの選択</h2>
+                <p class="step-description">お好みのトリートメントをお選びください</p>
+                <div class="treatment-grid">
+                    <div class="treatment-card" data-treatment="alkali">
+                        <div class="treatment-card-inner">
+                            <h3 class="treatment-name">アルカリ酸熱トリートメント</h3>
+                            <p class="treatment-description">髪に擬似的な架橋を作り<br><strong>ハリこし</strong>を出す</p>
+                        </div>
+                    </div>
+                    <div class="treatment-card" data-treatment="acid">
+                        <div class="treatment-card-inner">
+                            <h3 class="treatment-name">酸熱トリートメント</h3>
+                            <p class="treatment-description">髪に擬似的な架橋を作り<br><strong>柔らかさとしなやかさ</strong>を出す</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-nav">
+                    <button class="nav-btn prev-btn" onclick="backFromTreatment()">戻る</button>
+                    <button class="nav-btn next-btn" onclick="confirmTreatment()" disabled>次へ</button>
+                </div>
+            </section>
+
+            <!-- Step 3: ケア剤選択 -->
+            <section class="step step-3" id="step3">
+                <h2 class="step-title">ケア剤の選択</h2>
+                <p class="step-description" id="careDescription">お好みのケア剤をお選びください</p>
+                <div class="care-grid">
+                    <div class="care-card" data-care="keraforce">
+                        <div class="care-image">
+                            <img src="images/kera.jpg" alt="ケラフォース">
+                        </div>
+                        <h3 class="care-name">ケラフォース</h3>
+                        <p class="care-price" id="keraforcePrice">¥0</p>
+                        <ul class="care-features">
+                            <li>カラー後の手触りUP</li>
+                            <li>カラーのムラ防止</li>
+                            <li>超高濃度ケラチン配合</li>
+                        </ul>
+                    </div>
+                    <div class="care-card" data-care="angie">
+                        <div class="care-image">
+                            <img src="images/anji.jpg" alt="アンジー">
+                        </div>
+                        <h3 class="care-name">アンジー</h3>
+                        <p class="care-price" id="angiePrice">¥0</p>
+                        <ul class="care-features">
+                            <li>カラーのダメージ抑制</li>
+                            <li>カラーの発色UP</li>
+                            <li>カラーの嫌なニオイ低減</li>
+                        </ul>
+                    </div>
+                    <div class="care-card" data-care="nectar">
+                        <div class="care-image">
+                            <img src="images/nekuta.jpg" alt="ネクター">
+                        </div>
+                        <h3 class="care-name">ネクター</h3>
+                        <p class="care-price" id="nectarPrice">¥0</p>
+                        <ul class="care-features">
+                            <li>ダメージの根本的な解決</li>
+                            <li>ハイダメージ毛の修復</li>
+                            <li>髪が乾かない問題を解決</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-nav">
+                    <button class="nav-btn prev-btn" onclick="prevStep()">戻る</button>
+                    <button class="nav-btn next-btn" onclick="nextStep()" disabled>次へ</button>
+                </div>
+            </section>
+
+            <!-- Step 4: 料金確認 -->
+            <section class="step step-4" id="step4">
+                <h2 class="step-title">ご予約内容の確認</h2>
+                <div class="summary-container">
+                    <div class="summary-section">
+                        <h3 class="summary-heading">選択されたメニュー</h3>
+                        <ul class="summary-list" id="summaryMenus"></ul>
+                    </div>
+                    <div class="summary-section">
+                        <h3 class="summary-heading">コース</h3>
+                        <p class="summary-item" id="summaryCourse"></p>
+                    </div>
+                    <div class="summary-section" id="summaryTreatmentSection" style="display: none;">
+                        <h3 class="summary-heading">トリートメント</h3>
+                        <p class="summary-item" id="summaryTreatment"></p>
+                    </div>
+                    <div class="summary-section" id="summaryCareSection">
+                        <h3 class="summary-heading">ケア剤</h3>
+                        <p class="summary-item" id="summaryCare"></p>
+                    </div>
+                    <div class="summary-section" id="summaryNominationSection">
+                        <h3 class="summary-heading">指名料</h3>
+                        <p class="summary-item" id="summaryNomination"></p>
+                    </div>
+                    <div class="total-section">
+                        <div class="total-label">合計金額</div>
+                        <div class="total-price" id="totalPrice">¥0</div>
+                    </div>
+                </div>
+                <div class="step-nav">
+                    <button class="nav-btn prev-btn" onclick="prevStep()">戻る</button>
+                    <button class="nav-btn confirm-btn" onclick="resetApp()">最初からやり直す</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
